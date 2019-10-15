@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ encoded: true}));
 
 var task = ["clean", "cook"];
 app.get('/', function(req, res){
-    res.render("index");
+    res.render("index", {task: task});
 });
 
 app.post('/addtask', function(req, res){
