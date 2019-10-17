@@ -30,7 +30,7 @@ app.post('/removetask', function(req, res){
     }
     else if(typeof completeTask === "object"){
         for (var i; i < completeTask.length; i++ ){
-        complete.push(completeTask);
+        complete.push(completeTask{i});
         task.splice(task.indexOf(completeTask), 1);
         }
     }
