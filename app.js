@@ -19,7 +19,7 @@ let db = mongoose.connection;
 db.on('error', console.error.bind(console, "MongoDB connection error"));
 
 
-var task = ["clean", "cook"];
+var task = [];
 var complete = ["eat", "sleep"];
 
 app.get('/', function(req, res){
@@ -27,6 +27,7 @@ app.get('/', function(req, res){
         if(err){
             console.log(err);
         }else{
+            task = [];
             for(i = 0; i <todo.length; i++){
                 task.push(todo[i].item);
             }
@@ -47,7 +48,7 @@ app.post('/addtask', function(req, res){
         }
          res.redirect('/');
     });
-   
+
 });
 
 app.post('/removetask', function(req, res){
