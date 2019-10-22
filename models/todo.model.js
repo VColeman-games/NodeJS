@@ -8,5 +8,5 @@ let TodoSchema = new Schema({
 
 });
 
-modeule.exports = moogoose.model('Todo', TodoSchema)
+modeule.exports = moogoose.model('Todo', TodoSchema);
 
