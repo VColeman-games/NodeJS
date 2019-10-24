@@ -52,16 +52,21 @@ app.post('/addtask', function(req, res){
 });
 
 app.post('/removetask', function(req, res){
- var completeTask = req.body.check;
+    var completeTask = req.body.check;
+
     if(typeof completeTask === "string"){
         Todo.updateOne({item: completeTask},{done: true}, function(err){
             console.log(err);
-        });
+        })
+        // complete.push(completeTask);
+        // task.splice(task.indexOf(completeTask), 1);
     }else if (typeof completeTask === "object"){
-        for(var i = 0; i < completeTask.length; i++){
+        for(var i = 0; i < completeTask.length ; i++){
             Todo.updateOne({item: completeTask[i]},{done: true}, function(err){
-            console.log(err);
-        });
+                console.log(err);
+            })
+            // complete.push(completeTask[i]);
+            // task.splice(task.indexOf(completeTask[i]), 1);
         }
     }
     res.redirect('/');
