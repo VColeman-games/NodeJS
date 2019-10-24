@@ -23,13 +23,18 @@ var task = [];
 var complete = [];
 
 app.get('/', function(req, res){
-    Todo.find(function(err, todo){
+   Todo.find(function(err, todo){
         if(err){
             console.log(err);
         }else{
             task = [];
-            for(i = 0; i <todo.length; i++){
-                task.push(todo[i].item);
+            complete = [];
+            for(i = 0; i< todo.length; i++){
+                if(todo[i].done){
+                    complete.push(todo[i].item);
+                }else{
+                    task.push(todo[i].item);
+                }
             }
         }
     });
