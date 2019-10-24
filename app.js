@@ -20,7 +20,7 @@ db.on('error', console.error.bind(console, "MongoDB connection error"));
 
 
 var task = [];
-var complete = ["eat", "sleep"];
+var complete = [;
 
 app.get('/', function(req, res){
     Todo.find(function(err, todo){
