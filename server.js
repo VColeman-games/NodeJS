@@ -5,7 +5,7 @@ const app = express();
 var mongoose = require('mongoose');
 const port = process.env.PORT || 5000;
 
-app.set('views', path.join(__dirname, 'views'));
+//app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", 'ejs');
 app.use(express.static(path.join(__dirname, 'client/build')));
 
